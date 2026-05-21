@@ -1,5 +1,6 @@
 const STORAGE_KEY = 'boodschappen-app-v1';
 const DEFAULT_CATEGORIES = ['Groente', 'Fruit', 'Zuivel', 'Voorraadkast'];
+let fallbackIdSequence = 0;
 
 const elements = {
   form: document.querySelector('#product-form'),
@@ -241,7 +242,8 @@ function makeId() {
     return globalThis.crypto.randomUUID();
   }
 
-  return `product-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+  fallbackIdSequence += 1;
+  return `product-${Date.now()}-${fallbackIdSequence}`;
 }
 
 function escapeHtml(value) {
