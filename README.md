@@ -1,6 +1,6 @@
 # boodschappen-app
 
-Minimale lokale browserapp voor issue #468. Open `/home/runner/work/boodschappen-app/boodschappen-app/index.html` direct in een browser.
+Minimale lokale browserapp voor issue #468. Open `index.html` vanuit deze map direct in een browser.
 
 ## Gebruik
 

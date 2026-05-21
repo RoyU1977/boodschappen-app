@@ -214,7 +214,7 @@ function uniqueCategories(categories) {
     .map((category) => String(category || '').trim())
     .filter(Boolean);
 
-  return [...new Set([...DEFAULT_CATEGORIES, ...cleaned])].sort((left, right) => left.localeCompare(right, 'nl'));
+  return [...new Set([...DEFAULT_CATEGORIES, ...cleaned])].sort((a, b) => a.localeCompare(b, 'nl'));
 }
 
 function normalizeProduct(product) {
