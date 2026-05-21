@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Boodschappen App</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">WishForge proof-executie #468</p>
+        <h1>Boodschappen App</h1>
+        <p class="hero-copy">Beheer lokaal je voorraad en zie meteen wat op de boodschappenlijst moet.</p>
+      </section>
+
+      <section class="panel">
+        <h2>Nieuw product</h2>
+        <form id="product-form" class="product-form">
+          <label>
+            Productnaam
+            <input id="product-name" name="name" type="text" maxlength="60" required>
+          </label>
+
+          <div class="form-grid">
+            <label>
+              Categorie kiezen
+              <select id="category-select" name="category"></select>
+            </label>
+
+            <label>
+              Nieuwe categorie
+              <input id="category-input" name="newCategory" type="text" maxlength="40" placeholder="Bijv. Zuivel">
+            </label>
+          </div>
+
+          <div class="form-grid">
+            <label>
+              Voorraad
+              <input id="stock-input" name="stock" type="number" min="0" value="0" required>
+            </label>
+
+            <label>
+              Minimumvoorraad
+              <input id="min-stock-input" name="minStock" type="number" min="0" value="1" required>
+            </label>
+          </div>
+
+          <button type="submit">Product toevoegen</button>
+        </form>
+      </section>
+
+      <section class="panel summary-panel">
+        <div>
+          <h2>Boodschappenlijst</h2>
+          <p id="shopping-summary" class="muted"></p>
+        </div>
+        <ul id="shopping-list" class="shopping-list"></ul>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <h2>Voorraad</h2>
+          <p id="inventory-summary" class="muted"></p>
+        </div>
+        <div id="product-list" class="product-list"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
