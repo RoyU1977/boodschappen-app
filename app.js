@@ -60,7 +60,7 @@ function handleSubmit(event) {
   }
 
   state.products.unshift({
-    id: crypto.randomUUID(),
+    id: makeId(),
     name,
     category,
     stock,
@@ -234,6 +234,14 @@ function normalizeProduct(product) {
 function toNumber(value) {
   const parsed = Number(value);
   return Number.isFinite(parsed) && parsed >= 0 ? parsed : 0;
+}
+
+function makeId() {
+  if (globalThis.crypto?.randomUUID) {
+    return globalThis.crypto.randomUUID();
+  }
+
+  return `product-${Date.now()}-${Math.random().toString(16).slice(2)}`;
 }
 
 function escapeHtml(value) {
